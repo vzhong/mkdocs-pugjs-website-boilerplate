@@ -1,0 +1,15 @@
+site_name: Example website
+author: Victor Zhong
+brand: Brand
+nav:
+  - things: things.md
+use_directory_urls: false
+theme:
+  name: null
+  custom_dir: 'victor_theme/'
+copyright: 'Copyright 2023 by Victor Zhong'
+hooks:
+  - hooks.py
+watch:
+  - victor_theme
+  - data

@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block content %}
+{{page.content}}
+
+{% for grid in page.meta.grids %}
+{% set grid_data = grid.data_file|load_data(grid.filters) %}
+.div.is-size-3=grid.name
+br
+.columns.is-multiline
+  {% for item in grid_data %}
+  {% with show_key=grid.show_key %}
+  {% include 'card.html' %}
+  {% endwith %}
+  {% endfor %}
+{% endfor %}
+
+{% endblock %}

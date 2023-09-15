@@ -1,0 +1,31 @@
+.column.is-one-fifth
+  .card
+    {% if item.image %}
+    .card-image
+      .figure.image.is-square
+        img(src="{{item.image}}")
+    {% endif %}
+    .card-content
+      .title.is-size-4
+        a(href="{{item.url}}")=item.name
+      .subtitle.is-size-5=item.byline
+      {% for key, value in item.items() %}
+      {% if key not in ['name', 'byline', 'image', 'url'] %}
+      {% if value is string %}
+      .entry
+        {% if show_key %}
+        span.has-text-weight-bold=key + ": "
+        {% endif %}
+        span=value
+      {% elif value is iterable %}
+      .entry
+        {% if show_key %}
+        span.has-text-weight-bold=key + ": "
+        {% endif %}
+        .tags
+          {% for subvalue in value %}
+          span.tag=subvalue
+          {% endfor %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}

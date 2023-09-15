@@ -1,0 +1,21 @@
+- name: thing1
+  byline: byline1
+  image: https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1920px-Wikipedia-logo-v2.svg.png
+  foo: bar1
+  moo: dar1
+  roles:
+    - role2
+    - role3
+  url: http://wikipedia.com
+- name: thing2
+  byline: byline2
+  foo: bar1
+  moo: dar2
+  roles:
+    - role1
+    - role2
+- name: thing3
+  foo: bar3
+  moo: dar3
+  roles:
+    - role1
