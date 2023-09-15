@@ -3,7 +3,7 @@
 This is the source code for a website.
 At a high level, the website works as follows:
 
-- [mkdocs] is used to generate a static website from the markdown files in `docs` and the CSS theme in `victor_theme`.
+- `mkdocs` is used to generate a static website from the markdown files in `docs` and the CSS theme in `victor_theme`.
 - the generated website is located in `site`
 - `deploy.sh` pushes the content in `site` to a branch called `gh-pages`
 
