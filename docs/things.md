@@ -5,14 +5,16 @@ grids:
   - name: All things
     data_file: things
     show_key: true
-  - name: Things with foo = bar1
+  - name: Things with foo = bar1, hide moo
     data_file: things
     filters:
       - type: match
         key: foo
         value: bar1
+    ignore_keys:
+      - moo
     show_key: true
-  - name: Things with foo = bar1 and role1 in roles, no keys
+  - name: Things with foo = bar1 and role1 in roles, hide keys
     data_file: things
     filters:
       - type: match

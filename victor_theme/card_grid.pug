@@ -9,8 +9,8 @@
 br
 .columns.is-multiline
   {% for item in grid_data %}
-  {% with show_key=grid.show_key %}
-  {% include 'card.html' %}
+  {% with ignore_keys=grid.ignore_keys, show_key=grid.show_key %}
+  {% include grid.card_template|default("card.html", true) %}
   {% endwith %}
   {% endfor %}
 {% endfor %}

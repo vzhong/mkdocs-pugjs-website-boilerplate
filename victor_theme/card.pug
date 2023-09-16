@@ -1,5 +1,6 @@
 .column.is-one-fifth
   .card
+    {% set ignore_keys_all = ignore_keys|default([], true) + ['name', 'byline', 'url', 'image'] %}
     {% if item.image %}
     .card-image
       .figure.image.is-square
@@ -10,7 +11,7 @@
         a(href="{{item.url}}")=item.name
       .subtitle.is-size-5=item.byline
       {% for key, value in item.items() %}
-      {% if key not in ['name', 'byline', 'image', 'url'] %}
+      {% if key not in ignore_keys_all %}
       {% if value is string %}
       .entry
         {% if show_key %}
